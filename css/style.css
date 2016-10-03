@@ -21,6 +21,12 @@ font-weight:normal;font-style:normal;}
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
+/*bg-login*/
+.bg-login{
+	background-image: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
 .style-input{
 	background:none !important;
 }
@@ -111,4 +117,96 @@ font-weight:normal;font-style:normal;}
 }
 .item-complex:nth-child(5) .item-content{ 
     background-color: #767373;
+}
+.item-complex:nth-child(6) .item-content{ 
+    background-color: #767373;
+}
+
+/*container*/
+.container{
+	max-width: 785px;
+	margin:0 auto;
+}
+/*login-class*/
+.login-class{
+	text-align: center;
+}
+.login-class > img{
+	max-width: 100%;
+}
+.login-class .item-input{
+	background: rgba(255,255,255,0.4);
+	border: none;
+	padding: 12px 15px;
+}
+.login-class input{
+	text-align: center;
+}
+.login-class .input-label{
+	width: 15%;
+}
+.login-class .item-input input {
+	padding-right:15%;
+	color: #000000;
+	font-size: 30px;
+}
+.login-class .item-input input::-webkit-input-placeholder {
+   color: #000000;
+}
+
+.login-class .item-input input:-moz-placeholder { /* Firefox 18- */
+   color: #000000;  
+}
+
+.login-class .item-input input::-moz-placeholder {  /* Firefox 19+ */
+   color: #000000;  
+}
+
+.login-class .item-input input:-ms-input-placeholder {  
+   color: #000000;  
+}
+
+.button.button-stable.btn-seconnect{
+	background: none;
+	border:4px solid #ffffff;
+	color: #ffffff;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 30px;
+	padding: 25px 0;
+}
+.button.button-stable.btn-seconnect.marg-1{
+	margin-top: 60px;
+}
+.button.button-stable.btn-seconnect.marg-2{
+	margin-top: 30px;
+}
+.login-class .item-input.pass{
+	margin-top:30px;
+}
+.login-class .item-input.log{
+	margin-top:90px;
+}
+/*btn-seconnect-fb*/
+.button.button-stable.btn-seconnect-fb{
+	background: #000000;
+	color: #ffffff;
+	font-size: 30px;
+	padding: 28px 0;
+	margin:23px 0 0 0;
+}
+.mdp-oublier{
+	color: #ffffff;
+	font-size: 24px;
+	text-align: right;
+	text-decoration: none;
+	margin-top: 30px;
+	display: block;
+}
+.mdp-oublier span{
+	font-style:italic;
+}
+/*padd-log*/
+.padd-log{
+	padding:10% 0;
 }
