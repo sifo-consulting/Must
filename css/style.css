@@ -1,1 +1,114 @@
 /* Empty. Add your own CSS if you like */
+/* Empty. Add your own CSS if you like */
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ 
+@font-face {font-family:"Lato Regular";
+src:url("../fonts/lato_regular/Lato-Regular.eot?") format("eot"),
+url("../fonts/lato_regular/Lato-Regular.woff") format("woff"),
+url("../fonts/lato_regular/Lato-Regular.ttf") format("truetype"),
+url("../fonts/lato_regular/Lato-Regular.svg#Lato-Regular") format("svg");
+font-weight:normal;font-style:normal;}
+
+
+
+.item-border{
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	border-color: #7d7d7d;
+}
+.bg-app{
+	background-image: url(../img/bg-gris.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.style-input{
+	background:none !important;
+}
+.input-label-2{
+	font-family:"Lato Regular";
+	text-transform: uppercase;
+	color: #929292;
+}
+.button.btn-suivant{
+	background: none;
+	border-color: #000000;
+	border: 1px solid #000000;
+}
+.content-compte .button.button-energized-2 {
+    border-color: #feb100;
+    background-color: #feb100;
+    color: #000;
+}
+
+
+.content-compte .item-select-2{
+	background: none;
+    -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    display: block;
+    height: 34px;
+}
+
+/*marg-1*/
+.content-compte .marg-1{
+	margin-top: 21px;
+}
+.item-select::after {
+	top: auto;
+	bottom: 20%;
+	color: #000000;
+}
+/*padding-null*/
+.padding-null{
+	padding: 0 !important;
+}
+
+.content-compte select.item-select-2{
+	max-width:100%;
+}
+
+.content-compte label:hover .input-label-2{
+	color: #fcb100;
+}
+.content-compte label:hover {
+	border-color: #fcb100 !important;
+}
+
+/*recherche*/
+.recherche em{
+	font-style:italic;
+}
+.star-jaune{
+	color: #ffb100;
+}
+.recherche .item:nth-child(2n) {
+    background: #eef0ee;
+}
+
+
+.item-complex{ 
+	color: #ffffff;
+	text-align: center;
+	border: none;
+}
+.item-complex:nth-child(1) .item-content{ 
+    background-color: black;
+    background-image: url(../images/menu-recherche.png);
+    background-repeat: no-repeat;
+}
+.item-complex:nth-child(2) .item-content{ 
+    background-color: #2e2e2e;
+}
+.item-complex:nth-child(3) .item-content{ 
+    background-color: #474747;
+}
+.item-complex:nth-child(4) .item-content{ 
+    background-color: #5b5b5b;
+}
+.item-complex:nth-child(5) .item-content{ 
+    background-color: #767373;
+}
