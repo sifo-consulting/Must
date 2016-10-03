@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+var mymodule=angular.module('starter.controllers', [])
 
  
 .controller('loginCtrl', function($scope, $ionicModal, $timeout) {})
