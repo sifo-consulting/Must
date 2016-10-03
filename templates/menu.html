@@ -1,6 +1,6 @@
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable">
+    <ion-nav-bar class="bar-stable bar-dark">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
@@ -13,23 +13,37 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
-    </ion-header-bar>
     <ion-content>
       <ion-list>
+
+        <ion-item menu-close href="#/app/search" >
+          <img src="img/menu-recherche.png"><br>
+          Recherche
+        </ion-item>        
+        <ion-item menu-close href="#/app/profil">
+          <img src="img/menu-profil.png"><br>
+          Mon profil
+        </ion-item>
+        <ion-item menu-close href="#/app/circuit">
+          <img src="img/menu-profil.png"><br>
+          Circuit
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+          <img src="img/menu-recherche.png"><br>
+          Browse
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          <img src="img/menu-recherche.png"><br>
+          Playlists
+        </ion-item>
+        <ion-item menu-close href="#/app/inscription">
+          inscription
+        </ion-item>
+
         <ion-item menu-close ng-click="login()">
           Login
         </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Search
-        </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          Browse
-        </ion-item>
-        <ion-item menu-close href="#/app/rechercheMap">
-          Map
-        </ion-item>
+
       </ion-list>
     </ion-content>
   </ion-side-menu>
