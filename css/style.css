@@ -1,50 +1,50 @@
 /* Empty. Add your own CSS if you like */
 /* Empty. Add your own CSS if you like */
-/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ 
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */
 @font-face {font-family:"Lato Regular";
-src:url("../fonts/lato_regular/Lato-Regular.eot?") format("eot"),
-url("../fonts/lato_regular/Lato-Regular.woff") format("woff"),
-url("../fonts/lato_regular/Lato-Regular.ttf") format("truetype"),
-url("../fonts/lato_regular/Lato-Regular.svg#Lato-Regular") format("svg");
-font-weight:normal;font-style:normal;}
+    src:url("../fonts/lato_regular/Lato-Regular.eot?") format("eot"),
+    url("../fonts/lato_regular/Lato-Regular.woff") format("woff"),
+    url("../fonts/lato_regular/Lato-Regular.ttf") format("truetype"),
+    url("../fonts/lato_regular/Lato-Regular.svg#Lato-Regular") format("svg");
+    font-weight:normal;font-style:normal;}
 
 
 .item-border{
-	border-right: none;
-	border-left: none;
-	border-top: none;
-	border-color: #7d7d7d;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-color: #7d7d7d;
 }
 .bg-app{
-	background-image: url(../img/bg-gris.jpg);
-	background-repeat: no-repeat;
-	-moz-background-size: cover;     /* Gecko 1.9.2 (Firefox 3.6) */
-	-o-background-size: cover;        /* Opera 9.5 */
-	-webkit-background-size: cover;   /* Safari 3.0 */
-	background-size: cover;           /* Gecko 2.0 (Firefox 4.0) > CSS3 */ 
+    background-image: url(../img/bg-gris.jpg);
+    background-repeat: no-repeat;
+    -moz-background-size: cover;     /* Gecko 1.9.2 (Firefox 3.6) */
+    -o-background-size: cover;        /* Opera 9.5 */
+    -webkit-background-size: cover;   /* Safari 3.0 */
+    background-size: cover;           /* Gecko 2.0 (Firefox 4.0) > CSS3 */
 }
 /*bg-login*/
 .bg-login{
-	background-image: url(../img/bg.jpg);
-	background-repeat: no-repeat;
-	-moz-background-size: cover;     /* Gecko 1.9.2 (Firefox 3.6) */
-	-o-background-size: cover;        /* Opera 9.5 */
-	-webkit-background-size: cover;   /* Safari 3.0 */
-	background-size: cover;           /* Gecko 2.0 (Firefox 4.0) > CSS3 */ 
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    -moz-background-size: cover;     /* Gecko 1.9.2 (Firefox 3.6) */
+    -o-background-size: cover;        /* Opera 9.5 */
+    -webkit-background-size: cover;   /* Safari 3.0 */
+    background-size: cover;           /* Gecko 2.0 (Firefox 4.0) > CSS3 */
 }
 .style-input{
-	background:none !important;
+    background:none !important;
 }
 .input-label-2{
-	font-family:"Lato Regular";
-	text-transform: uppercase;
-	color: #929292;
+    font-family:"Lato Regular";
+    text-transform: uppercase;
+    color: #929292;
 }
 .button.btn-suivant{
-	background: none;
-	border-color: #000000;
-	border: 1px solid #000000;
-	margin-top: 6%;
+    background: none;
+    border-color: #000000;
+    border: 1px solid #000000;
+    margin-top: 6%;
 }
 .content-inscri-1 .button.button-energized-2 {
     border-color: #feb100;
@@ -54,10 +54,10 @@ font-weight:normal;font-style:normal;}
 
 
 .content-inscri-1 .item-select-2{
-	background: none;
+    background: none;
     -webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: none;
     box-shadow: none;
     width: 100%;
@@ -65,74 +65,74 @@ font-weight:normal;font-style:normal;}
     height: 34px;
 }
 .content-inscri-1{
-	padding: 6% 0;
+    padding: 6% 0;
 }
 /*marg-1*/
 .content-inscri-1 .marg-1{
-	margin-top: 21px;
+    margin-top: 21px;
 }
 .item-select::after {
-	top: auto;
-	bottom: 20%;
-	color: #000000;
+    top: auto;
+    bottom: 20%;
+    color: #000000;
 }
 /*padding-null*/
 .padding-null{
-	padding: 0 !important;
+    padding: 0 !important;
 }
 .padd-left-null{
-	padding-left: 0 !important;
+    padding-left: 0 !important;
 }
 .padd-right-null{
-	padding-right: 0 !important;
+    padding-right: 0 !important;
 }
 
 .content-inscri-1 select.item-select-2{
-	max-width:100%;
+    max-width:100%;
 }
 
 .content-inscri-1 label:hover .input-label-2,.content-inscri-2 label:hover .input-label-2{
-	color: #fcb100;
+    color: #fcb100;
 }
 .content-inscri-1 label:hover,.content-inscri-2 label:hover {
-	border-color: #fcb100 !important;
+    border-color: #fcb100 !important;
 }
 
 /*recherche*/
 .recherche em{
-	font-style:italic;
+    font-style:italic;
 }
 .star-jaune{
-	color: #ffb100;
+    color: #ffb100;
 }
 .recherche .item:nth-child(2n) {
     background: #eef0ee;
 }
 
 
-.item-complex{ 
-	color: #ffffff;
-	text-align: center;
-	border: none;
+.item-complex{
+    color: #ffffff;
+    text-align: center;
+    border: none;
 }
-.item-complex:nth-child(1) .item-content{ 
+.item-complex:nth-child(1) .item-content{
     background-color: black;
     background-image: url(../images/menu-recherche.png);
     background-repeat: no-repeat;
 }
-.item-complex:nth-child(2) .item-content{ 
+.item-complex:nth-child(2) .item-content{
     background-color: #2e2e2e;
 }
-.item-complex:nth-child(3) .item-content{ 
+.item-complex:nth-child(3) .item-content{
     background-color: #474747;
 }
-.item-complex:nth-child(4) .item-content{ 
+.item-complex:nth-child(4) .item-content{
     background-color: #5b5b5b;
 }
-.item-complex:nth-child(5) .item-content{ 
+.item-complex:nth-child(5) .item-content{
     background-color: #767373;
 }
-.item-complex:nth-child(6) .item-content{ 
+.item-complex:nth-child(6) .item-content{
     background-color: #767373;
 }
 
@@ -157,84 +157,95 @@ font-weight:normal;font-style:normal;}
 
 
 .myListLogin .button-style-1 {
-  background: transparent;
-  border: 1px solid #ffffff;
-  text-align: center;
+    background: transparent;
+    border: 1px solid #ffffff;
+    text-align: center;
 }
 .myListLogin .button-style-1:active,.myListLogin .button-style-1.activated {
-  background: rgba(255,255,255,0.2);
-  border-color: #ffffff;
+    background: rgba(255,255,255,0.2);
+    border-color: #ffffff;
 }
 
 .myListLogin .button-style-fb {
-  background: #000000;
-  border: none;
+    background: #000000;
+    border: none;
 }
 .myListLogin .button-style-fb:active,.myListLogin .button-style-fb.activated {
-  background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.85);
 }
 .mdp-oublier{
-	color: #ffffff;
-	text-align: right;
-	text-decoration: none;
-	float: right;
+    color: #ffffff;
+    text-align: right;
+    text-decoration: none;
+    float: right;
 }
 .mdp-oublier span{
-	font-style : italic;
+    font-style : italic;
 }
 .button-style-1.marg-btn-1{
-	margin-top: 15px;
+    margin-top: 15px;
 }
 .myListLogin{
-	margin-top: 2%;
+    margin-top: 10%;
 }
 .logoStyle{
-	width: 50%;
-	max-width: 400px;
+    width: 50%;
+    max-width: 400px;
 }
 .paddingLoginPage{
-	padding: 6% 0;
+    padding: 6% 0;
 }
 .myListLogin .item.item-input input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #000000;
-  	text-transform: uppercase;
+    color: #000000;
+    text-transform: uppercase;
 }
 .myListLogin .item.item-input input::-moz-placeholder { /* Firefox 19+ */
-  color: #000000;
-	text-transform: uppercase;
+    color: #000000;
+    text-transform: uppercase;
 }
 .myListLogin .item.item-input input:-ms-input-placeholder { /* IE 10+ */
-  color: #000000;
-text-transform: uppercase;
+    color: #000000;
+    text-transform: uppercase;
 }
 .myListLogin .item.item-input input:-moz-placeholder { /* Firefox 18- */
-  color: #000000;
-text-transform: uppercase;
+    color: #000000;
+    text-transform: uppercase;
 }
 
 
 .button.button-energized-2{
-	background: #ffb100;
-	text-transform: uppercase;
-	color: #000;
-	font-weight: bold;
-	margin-top: 20px;
+    background: #ffb100;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    margin-top: 20px;
 }
 .marg-top-ins{
-	margin-top: 1%;
+    margin-top: 1%;
 }
 .button.button-energized-2:hover {
     color: #000;
-
+    
 }
 
 @media (max-width: 567px) {
-	.padd-left-null,.padd-right-null{
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-	}
+    .padd-left-null,.padd-right-null{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
 
 
 /*recherchemap*/
 
+
+#map {
+    width: 100%;
+    height: 70%;
+    
+}
+.scroll {
+    height: 100%;
+}
+
+ 
