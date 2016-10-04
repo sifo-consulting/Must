@@ -1,31 +1,30 @@
-<ion-view view-title="Login" name="login-view" class="bg-login">
-    <ion-content class="padding">
+<ion-view hide-nav-bar="true" name="login-view" class="bg-login">
+    <ion-content class="paddingLoginPage">
         
-        <center><img src="img/logo.png" width="30%"></center>
+        <center><img src="img/logo.png" class="logoStyle"></center>
         
         
-        <div class="list">
-            <label class="item item-input ion-email">
+        <div class="list myListLogin">
+
+            <label class="item item-input ion-ios-email-outline">
                 <input type="text" placeholder="login">
-                    </label>
-            <label class="item item-input ion-email">
-                <input type="text" placeholder="Email">
-                    </label>
-            <label class="item item-input ion-key">
+            </label>
+               
+            <label class="item item-input ion-ios-locked-outline">
                 <input type="text" placeholder="Mot de passe">
-                    </label>
+            </label>
             
-            <button class="button button-block button-positive button-assertive">
+            <button class="button button-block button-style-1 button-assertive marg-btn-1">
                 Se connecter
             </button>
-            <button class="button button-block button-positive button-assertive">
+            <button class="button button-block button-style-1 button-assertive">
                 Créez un compte
             </button>
-            <button class=" button button-block button-positive button-assertive btn-seconnect-fb">
-                Se connecter avec facebook
+            <button class=" button button-block button-style-fb button-assertive">
+                <i class="ion-social-facebook">&nbsp;&nbsp;Se connecter avec facebook</i>
             </button>
             
-            <a class="mdp-oublier" href="#"><span>Mot de passe oublié?&nbsp;</span>CLICER ICI</a>
+            <a class="mdp-oublier" href="#"><span>Mot de passe oublié?   </span>Cliquez ici</a>
             
         </div>
         
