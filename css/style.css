@@ -18,7 +18,10 @@ font-weight:normal;font-style:normal;}
 .bg-app{
 	background-image: url(../img/bg-gris.jpg);
 	background-repeat: no-repeat;
-	background-size: 100%;
+	-moz-background-size: cover;     /* Gecko 1.9.2 (Firefox 3.6) */
+	-o-background-size: cover;        /* Opera 9.5 */
+	-webkit-background-size: cover;   /* Safari 3.0 */
+	background-size: cover;           /* Gecko 2.0 (Firefox 4.0) > CSS3 */ 
 }
 /*bg-login*/
 .bg-login{
@@ -41,15 +44,16 @@ font-weight:normal;font-style:normal;}
 	background: none;
 	border-color: #000000;
 	border: 1px solid #000000;
+	margin-top: 6%;
 }
-.content-compte .button.button-energized-2 {
+.content-inscri-1 .button.button-energized-2 {
     border-color: #feb100;
     background-color: #feb100;
     color: #000;
 }
 
 
-.content-compte .item-select-2{
+.content-inscri-1 .item-select-2{
 	background: none;
     -webkit-appearance: none;
 	-moz-appearance: none;
@@ -60,9 +64,11 @@ font-weight:normal;font-style:normal;}
     display: block;
     height: 34px;
 }
-
+.content-inscri-1{
+	padding: 6% 0;
+}
 /*marg-1*/
-.content-compte .marg-1{
+.content-inscri-1 .marg-1{
 	margin-top: 21px;
 }
 .item-select::after {
@@ -74,15 +80,21 @@ font-weight:normal;font-style:normal;}
 .padding-null{
 	padding: 0 !important;
 }
+.padd-left-null{
+	padding-left: 0 !important;
+}
+.padd-right-null{
+	padding-right: 0 !important;
+}
 
-.content-compte select.item-select-2{
+.content-inscri-1 select.item-select-2{
 	max-width:100%;
 }
 
-.content-compte label:hover .input-label-2{
+.content-inscri-1 label:hover .input-label-2,.content-inscri-2 label:hover .input-label-2{
 	color: #fcb100;
 }
-.content-compte label:hover {
+.content-inscri-1 label:hover,.content-inscri-2 label:hover {
 	border-color: #fcb100 !important;
 }
 
@@ -199,3 +211,30 @@ text-transform: uppercase;
   color: #000000;
 text-transform: uppercase;
 }
+
+
+.button.button-energized-2{
+	background: #ffb100;
+	text-transform: uppercase;
+	color: #000;
+	font-weight: bold;
+	margin-top: 20px;
+}
+.marg-top-ins{
+	margin-top: 1%;
+}
+.button.button-energized-2:hover {
+    color: #000;
+
+}
+
+@media (max-width: 567px) {
+	.padd-left-null,.padd-right-null{
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}
+
+
+/*recherchemap*/
+
