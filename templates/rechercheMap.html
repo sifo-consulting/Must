@@ -1,8 +1,42 @@
-<ion-view view-title="Recherche">
+<ion-view view-title="Recherche Map">
+  <ion-content>
+   
+  		<div class="map" id="map" ng-model="map">
+  		
+  		
+	  		<div class="padding pos-dep-arr">
+				<label class="item item-input item-stacked-label ion-ios-search ion-rech">
+				    <span class="input-label input-label-rech">Départ</span>
+				    <input type="text" placeholder="63120 Vollore-Ville">
+				</label>
+				
+				<label class="item item-input item-stacked-label ion-ios-search ion-rech">
+				    <span class="input-label input-label-rech">arrivée</span>
+				    <input type="text" placeholder="63120 Vollore-Ville">
+				</label>
+			</div>
+			<div class="pos-dist-temp">
+				<div class="padding">
+					<div class="dist-temp">
+						<div class="row">
+							<div class="col border-right">
+								<span>Distance</span>
+								<p>12km</p>
+							</div>
+							<div class="col">
+								<span>Temps</span>
+								<p>30min</p>
+							</div>
+						</div>
+						<!--row-->
+					</div>
+					<a ng-href="#/app/resultRecherche" class="btn-go">
+						<img src="img/btn-go.png">
+					</a>
+				</div>
+			</div>
+		</div>
  
-
- <ion-content>
-      <div ng-model="map" id="map" ></div>
-    </ion-content>
-     
+  </ion-content>
 </ion-view>
+

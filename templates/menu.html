@@ -1,41 +1,48 @@
-<ion-side-menus enable-menu-with-back-views="false">
+<ion-side-menus enable-menu-with-back-views="false" ng-controller="menucontroller">
   <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable bar-dark">
+    <ion-nav-bar class="bar-stable bar-dark mynavbar">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"  >
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"  ng-click="siderAction()">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu side="left"  ng-hide="hideLeft">
+  <ion-side-menu side="left"    width="myWidthValue + 150" class="changeMenu" enable-menu-with-back-views="false">
     <ion-content>
       <ion-list>
 
         <ion-item menu-close href="#/app/rechercheMap" >
-          <img src="img/menu-recherche.png"><br>
+          <img src="img/menu-recherche.png">
           Recherche
-        </ion-item>        
+        </ion-item>
         <ion-item menu-close href="#/app/profil">
-          <img src="img/menu-profil.png"><br>
+          <img src="img/menu-profil.png">
           Mon profil
         </ion-item>
         <ion-item menu-close href="#/app/circuit">
-          <img src="img/menu-profil.png"><br>
+          <img src="img/menu-circuit.png">
           Circuit
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          <img src="img/menu-recherche.png"><br>
-          Browse
+        <ion-item menu-close href="#/app/historique">
+          <img src="img/menu-historique.png">
+          Historique
         </ion-item>
+        <ion-item menu-close href="#/app/plaindre">
+          <img src="img/menu-plaindre.png">
+          Se plaindre
+        </ion-item>
+
+        <!--
         <ion-item menu-close href="#/app/playlists">
           <img src="img/menu-recherche.png"><br>
           Playlists
         </ion-item>
+        
         <ion-item menu-close href="#/app/inscription">
           inscription
         </ion-item>
@@ -43,7 +50,7 @@
         <ion-item menu-close ng-click="login()">
           Login
         </ion-item>
-
+        -->
       </ion-list>
     </ion-content>
   </ion-side-menu>

@@ -1,55 +1,63 @@
 <ion-view view-title="CREER UN COMPTE" class="bg-app">
-  <ion-content>
+
+
+    <ion-content>
   <div class="content-inscri-1">
      <div class="list">
-      <div class="row">
+         <form name="myForm" novalidate>
+             <div class="row">
        <div class="col col-50">
        <label class="item item-input item-stacked-label item-border">
          <span class="input-label input-label-2">Prénom</span>
-         <input type="text" class="style-input">
+         <input type="text" class="style-input" name="prenom" required ng-model="inscri.prenom">
        </label>
     </div>
     <div class="col col-50">
        <label class="item item-input item-stacked-label item-border">
          <span class="input-label input-label-2">Nom</span>
-         <input type="text" class="style-input">
+         <input type="text" class="style-input" required ng-model="inscri.nom">
        </label>
     </div>
    </div>
    <div class="padding">
      <label class="item item-input item-stacked-label item-border">
        <span class="input-label input-label-2">Adresse e-mail</span>
-       <input type="text" class="style-input">
+       <input type="text" class="style-input" required ng-model="inscri.email">
      </label> 
    </div>  
 
   <div class="row">
-    <div class="col col-25">
+    <div class="col col-33">
      <label class="item item-input item-stacked-label item-border item-select">
        <span class="input-label input-label-2">Mobile</span>
-       <select class="item-select-2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+    
+       <select class="item-select-2 ">
+        <option ng-repeat="cnt in country" class=" {{cnt.code | lowercase}}">  {{cnt.dial_code}}  </option>
+        
        </select>
      </label>   
     </div>
     <div class="col">
    <label class="item item-input item-stacked-label item-border">
        <!--<span class="input-label input-label-2">Mobile</span>-->
-       <input type="text" class="style-input marg-1">
+       <input type="tel" class="style-input marg-1" ng-model="inscri.num" required>
      </label> 
     </div>
-  </div>   
-     
-  <div class="padding">
+  </div>
+      </form>
+         <div class="padding">
       <label class="item item-input item-stacked-label item-border">
       <span class="input-label input-label-2">Mot de passe</span>
-      <input type="password" class="style-input">
+      <input type="password" class="style-input" ng-model="inscri.password" ng-minlength="4" required>
     </label>
 
-  
-   <a ng-href="#/app/inscription2" class="button button-full button-stable btn-suivant" >
+      <div class="padding">
+          <p ng-show="myForm.inscri.prenom.$error.required">* prenom is required</p>
+          <p ng-show="myForm.inscri.email.$invalid && !myForm.inscri.email.$pristine">* Username must be an email address</p>
+          <p ng-show="myForm.inscri.username.$error.minlength">* Username must be longer than 5 characters</p>
+         
+      </div>
+   <a  class="button button-full button-stable btn-suivant" ng-click="send()" ng-disabled="myForm.$invalid">
      SUIVANT
    </a>
 

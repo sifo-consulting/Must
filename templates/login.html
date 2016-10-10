@@ -7,24 +7,24 @@
         <div class="list myListLogin">
 
             <label class="item item-input ion-ios-email-outline">
-                <input type="text" placeholder="login">
+                <input type="text" placeholder="login" ng-model="myLogin.login" />
             </label>
                
             <label class="item item-input ion-ios-locked-outline">
-                <input type="text" placeholder="Mot de passe">
+                <input type="text" placeholder="Mot de passe" ng-model="myLogin.password" />
             </label>
             
-            <button class="button button-block button-style-1 button-assertive marg-btn-1">
+            <a class="button button-full button-style-1 button-assertive marg-btn-1" ng-click="connect()">
                 Se connecter
-            </button>
-            <button class="button button-block button-style-1 button-assertive">
+            </a>
+            <a class="button button-full button-style-1 button-assertive" href="#/app/inscription">
                 Créez un compte
-            </button>
-            <button class=" button button-block button-style-fb button-assertive">
+            </a>
+            <a class=" button button-full button-style-fb button-assertive">
                 <i class="ion-social-facebook">&nbsp;&nbsp;Se connecter avec facebook</i>
-            </button>
+            </a>
             
-            <a class="mdp-oublier" href="#/app/inscription"><span>Mot de passe oublié?&nbsp;</span>CLICER ICI</a>
+   <a class="mdp-oublier" ><span>Mot de passe oublié &nbsp? &nbsp;</span>CLIQUEZ ICI</a>
             
         </div>
         

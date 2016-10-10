@@ -1,0 +1,30 @@
+<ion-view hide-back-button="true" view-title="Validation" class="bg-app">
+  <ion-content>
+
+  		<div class="content-inscri-2 padding">
+
+			<br/><br/>
+<form name="myForm">
+		  	<label class="item item-input item-stacked-label item-border marg-top-ins">
+				<span class="input-label input-label-2">Code</span>
+				<input type="tel" class="style-input"  ng-minlength="5" ng-model="data.code">
+			</label>
+			</form>
+			<!--Code-->
+			<div class="padding">
+
+				<p ng-show="myForm.data.code.$error.minlength">* code must be longer  5 characters</p>
+
+			</div>
+
+	 <a class="button button-block button-energized button-energized-2"  ng-click="valider()" ng-disabled="myForm.$invalid">ENVOYER</a>
+		</div>
+		<!--content-inscri-1-->
+
+
+
+
+  </ion-content>
+</ion-view>
+
+

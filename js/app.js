@@ -24,8 +24,9 @@ var mymodule=angular.module('starter', ['ionic' ,'starter.controllers','ngCordov
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+ //$ionicConfigProvider.backButton.text('').icon('ion-ios7-arrow-left');
+        $stateProvider
 
     .state('app', {
     url: '/app',
@@ -43,7 +44,16 @@ var mymodule=angular.module('starter', ['ionic' ,'starter.controllers','ngCordov
     }
   })
 
-  .state('app.inscription', {
+   .state('app.codeValidation', {
+        url: '/codeValidation',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/codeValidation.html',
+            controller: 'codeValidationCtrl'
+          }
+        }
+      })
+      .state('app.inscription', {
       url: '/inscription',
       views: {
         'menuContent': {
@@ -61,14 +71,101 @@ var mymodule=angular.module('starter', ['ionic' ,'starter.controllers','ngCordov
         }
       }
     })
-        .state('app.circuit', {
-               url: '/circuit',
+      .state('app.reserver', {
+                     url: '/reserver',
+                     views: {
+                     'menuContent': {
+                     templateUrl: 'templates/reserver.html'
+                     }
+                     }
+                     })
+                       .state('app.rechercheMap2', {
+               url: '/rechercheMap2',
                views: {
                'menuContent': {
-               templateUrl: 'templates/circuit.html'
+               templateUrl: 'templates/rechercheMap2.html',
+               controller:'circuitCtrl'
                }
                }
                })
+         .state('app.circuit2', {
+                                       url: '/circuit2',
+                                       views: {
+                                       'menuContent': {
+                                       templateUrl: 'templates/circuit2.html'
+                                       }
+                                       }
+                                       })
+        .state('app.circuit', {
+                                url: '/circuit',
+                                views: {
+                                'menuContent': {
+                                templateUrl: 'templates/circuit.html',
+                                controller:'circuitCtrl'
+                                }
+                                }
+                                })
+         .state('app.historique', {
+                                 url: '/historique',
+                               views: {
+                              'menuContent': {
+                             templateUrl: 'templates/historique.html'
+                             }
+                               }
+                           })
+   .state('app.resultRecherche', {
+                                          url: '/resultRecherche',
+                                          views: {
+                                          'menuContent': {
+                                          templateUrl: 'templates/resultRecherche.html',
+                                          controller:"resultatRechercheCtrl"
+                                          }
+                                          }
+                                          })
+    .state('app.avis2', {
+                                             url: '/avis2',
+                                             views: {
+                                             'menuContent': {
+                                             templateUrl: 'templates/avis2.html'
+                                             }
+                                             }
+                                             })
+  .state('app.avis', {
+                                              url: '/avis',
+                                              views: {
+                                              'menuContent': {
+                                              templateUrl: 'templates/avis.html'
+                                              }
+                                              }
+                                              })
+
+
+
+ .state('app.suivre2', {
+                                             url: '/suivre2',
+                                             views: {
+                                             'menuContent': {
+                                             templateUrl: 'templates/suivre2.html'
+                                             }
+                                             }
+                                             })
+
+         .state('app.plaindre', {
+                                         url: '/plaindre',
+                                         views: {
+                                         'menuContent': {
+                                         templateUrl: 'templates/plaindre.html'
+                                         }
+                                         }
+                                         })
+            .state('app.profil', {
+                                                 url: '/profil',
+                                                 views: {
+                                                 'menuContent': {
+                                                 templateUrl: 'templates/profil.html'
+                                                 }
+                                                 }
+                                                 })
   .state('app.rechercheMap', {
     url: '/rechercheMap',
     views: {
