@@ -306,7 +306,7 @@ text-transform: uppercase;
 #map {
     width: 100%;
     height: 100%;
-
+    
 }
 .scroll {
     height: 100%;
@@ -350,7 +350,7 @@ text-transform: uppercase;
 }
 .btn-go img{
     width: 70px;
-
+    
 }
 
 .button-upload{
@@ -359,20 +359,22 @@ text-transform: uppercase;
     background: transparent;
     text-transform: uppercase;
     font-weight: bold;
-    max-width: 250px;
+    width: 250px;
     margin-top: 35px;
     border-radius: 0;
 }
 .avatar-upload{
     border-radius: 50% 50%;
-    width: 30%;
+    width: 150px;
     max-width: 150px;
+    height: 150px;
 }
 
 
 @media (min-width: 568px) {
     .avatar-upload{
         width: 120px;
+        height: 120px;
     }
     .avatar-upload{
         float: right;
@@ -380,9 +382,10 @@ text-transform: uppercase;
 }
 @media (max-width: 567px) {
     .avatar-upload{
-        max-width: 40%;
+        max-width: 90px;
         margin:0 auto;
         display: block;
+        height: 90px;
     }
     .button-upload {
         margin: 0 auto;
@@ -409,30 +412,30 @@ text-transform: uppercase;
     padding: 15% 10% 10%;
 }
 
-.changeMenu .item-complex{
+.changeMenu .item-complex{ 
     color: #ffffff;
     text-align: center;
     border: none;
     text-transform: uppercase;
 }
-.item-complex:nth-child(1) .item-content{
+.item-complex:nth-child(1) .item-content{ 
     background-color: black;
     background-image: url(../images/menu-recherche.png);
     background-repeat: no-repeat;
 }
-.item-complex:nth-child(2) .item-content{
+.item-complex:nth-child(2) .item-content{ 
     background-color: #2e2e2e;
 }
-.item-complex:nth-child(3) .item-content{
+.item-complex:nth-child(3) .item-content{ 
     background-color: #474747;
 }
-.item-complex:nth-child(4) .item-content{
+.item-complex:nth-child(4) .item-content{ 
     background-color: #5b5b5b;
 }
-.item-complex:nth-child(5) .item-content{
+.item-complex:nth-child(5) .item-content{ 
     background-color: #767373;
 }
-.item-complex:nth-child(6) .item-content{
+.item-complex:nth-child(6) .item-content{ 
     background-color: #767373;
 }
 
@@ -456,7 +459,7 @@ text-transform: uppercase;
     -moz-background-size: cover;     /* Gecko 1.9.2 (Firefox 3.6) */
     -o-background-size: cover;        /* Opera 9.5 */
     -webkit-background-size: cover;   /* Safari 3.0 */
-    background-size: cover;
+    background-size: cover; 
 }
 .reservation-top h2{
     text-align: center;
@@ -469,7 +472,7 @@ text-transform: uppercase;
     font-style: italic;
 }
 .reservation-top h4{
-    margin-bottom:2px;
+    margin-bottom:2px; 
     margin-top: 4px;
 }
 .reservation-top .button-black{
@@ -613,10 +616,10 @@ input:-moz-placeholder { /* Firefox 18- */
 }
 
 /*activer*/
-.activer .toggle .handle{
+.toggle .handle{
     background: #000000;
 }
-.activer .toggle.toggle-assertive input:checked + .track {
+.toggle.toggle-calm input:checked + .track,.toggle.toggle-assertive input:checked + .track {
     border-color: #ffb100;
     background-color: #ffb100;
 }
@@ -661,7 +664,7 @@ input:-moz-placeholder { /* Firefox 18- */
 }
 .pos-btn-abon{
     position:absolute;
-    top: 0;
+    top: 0; 
     left: 0;
     width: 100%;
 }
@@ -830,7 +833,7 @@ p {
     width: 100%;
     height: 100%;
     background-image: -webkit-gradient(linear, 0 -25%, 100% top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(20%, rgba(255, 255, 255, 0)), color-stop(30%, rgba(0, 0, 0, 0.04)), color-stop(40%, rgba(255, 255, 255, 0.2)), color-stop(60%, rgba(255, 255, 255, 0)), color-stop(65%, rgba(255, 255, 255, 0.2)), color-stop(80%, rgba(0, 0, 0, 0.05)), color-stop(100%, rgba(255, 255, 255, 0)));
-
+ 
     background-size: 200%;
     -webkit-animation-name: flutter;
     -webkit-animation-duration: 8s;
@@ -869,7 +872,7 @@ p {
         background-position: 200% 0px;
     }
 }
-
+ 
 @-webkit-keyframes wave {
     0% {
         box-shadow: 4px 5px 5px 0 rgba(0, 0, 0, 0.1);
@@ -896,7 +899,7 @@ p {
         -webkit-transform: translate3d(0, 0, 0) rotateZ(5deg) rotateY(22deg);
     }
 }
-
+ 
 @keyframes wave {
     0% {
         box-shadow: 4px 5px 5px 0 rgba(0, 0, 0, 0.1);

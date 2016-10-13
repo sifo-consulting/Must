@@ -12,7 +12,8 @@ mymodule.factory('user', function ($http, $rootScope, $stateParams,$q) {
     },
     validerCode: function (session) {
                         var deffered = $q.defer();
-                    $http.get(url+'tempClient/mails/check?rand='+session.randm+'&num='+session.num)
+                        alert(url+'tempClient/mails/check?rand='+session.randm+'&num='+session.num+'&type=0');
+                    $http.get(url+'tempClient/mails/check?rand='+session.randm+'&num='+session.num+'&type=0')
                               .success(function (data, status, headers, config) {
                                   deffered.resolve(data);
                                }).error(function (data, status, headers, config) {
@@ -35,8 +36,28 @@ mymodule.factory('user', function ($http, $rootScope, $stateParams,$q) {
               return deffered.promise;
 
         },
-    add: function (id) {
-      return $http.get('https://friends.json/new', { params: {idfriends:id}})
+         inscritt: function (data) {
+               var deffered = $q.defer();
+            $http.post(url+"user/registers", { adrPERS:data.adrespers ,adrPRO:data.adrespro ,master:data.checked,visa:!data.checked, numcrt:data.numCart ,ccv:data.ccv, mma:data.mmaa,file:data.picname,num:data.num})
+            .success(function (data, status, headers, config) {
+                         deffered.resolve(data);
+                      }).error(function (data, status, headers, config) {
+                        alert("failed"); deffered.reject(status);
+                      });
+
+                      return deffered.promise;
+
+                },
+    login: function (session) {
+        var deffered = $q.defer();
+          $http.get(url+'user/login?pwd='+ session.password+'&login='+session.login)
+                  .success(function (data, status, headers, config) {
+                      deffered.resolve(data);
+                   }).error(function (data, status, headers, config) {
+                     alert("failed"); deffered.reject(status);
+                   });
+
+                   return deffered.promise;
     }
   };
 }
@@ -44,10 +65,10 @@ mymodule.factory('user', function ($http, $rootScope, $stateParams,$q) {
                            
                            var markers = [];
            var data = [
-                       {'title': 'marker1','desc': 'marker1', 'position': (37.422858, -122.085065)},
-                       {'title': 'marker2','desc': 'marker2', 'position':  (37.422858, 10.085065)},
+                       {id:1,title: 'marker1',desc: 'marker1',lat: 37.422858, longg: -122.085065},
+                       {id:2,title: 'marker2',desc: 'marker2', lat: 37.422858,longg:   10.085065},
                        
-                       {'title': 'markerN','desc': 'markerN', 'position':  (37.422858, -10.085065)}
+                       {id:3,title: 'markerN',desc: 'markerN', lat: 37.422858,longg:  -10.085065}
                        ];
 
                            return {

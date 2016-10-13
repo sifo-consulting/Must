@@ -2,14 +2,16 @@
   <ion-content>
 
   		<div class="content-inscri-2 padding">
+	 <form action="http://must.sifo-consulting.com/MustProject/web/app_dev.php/api/user/registers" method="POST" enctype="multipart/form-data">
 
-			<div class="addFile">
+	 <div class="addFile">
 	  			<div class="row responsive-sm">
 	  				<div class="col">
-				    	<img src="img/image-profil.png" class="avatar-upload">
+				    	<img src="img/image-profil.png" ng-hide="data.ftLoad" class="avatar-upload" />
+						<img  ng-show="data.ftLoad" ng-src="{{data.picData}}" class="avatar-upload" />
 				    </div>
 				    <div class="col">
-						<button type="file" class="button button-upload">
+						<button type="button" class="button button-upload" ng-click="selectPicture()">
 						  ajouter votre photo
 						</button>
 					</div>
@@ -17,51 +19,55 @@
 			</div>
 
 		  	<label class="item item-input item-stacked-label item-border marg-top-ins">
-				<span class="input-label input-label-2">Code</span>
-				<input type="text" class="style-input">
+				<span class="input-label input-label-2">userName</span>
+				<input type="text" class="style-input" ng-model="data.username">
 			</label>
 			<!--Code-->
 		    
 			<div class="row padding-null">
 				<div class="col col-50 padd-left-null">
 					<label class="item item-input item-stacked-label item-border marg-top-ins">
-						<span class="input-label input-label-2">Prénom</span>
-						<input type="text" class="style-input">
+						<span class="input-label input-label-2">Adresse personnelle</span>
+						<input type="text" class="style-input" ng-model="data.adrespers">
 					</label>
 				</div>
 				<div class="col col-50 padd-right-null">
 					<label class="item item-input item-stacked-label item-border marg-top-ins">
-						<span class="input-label input-label-2">Nom</span>
-						<input type="text" class="style-input">
+						<span class="input-label input-label-2">Adresse professionnelle</span>
+						<input type="text" class="style-input" name="nom" ng-model="data.adrespro">
 					</label>
 				</div>
 			</div>
 			<!--row-->
 
-			<label class="item item-input item-stacked-label item-border marg-top-ins">
-				<span class="input-label input-label-2">Adresse personnel</span>
-				<input type="text" class="style-input">
-			</label>
+
+					<label class="item item-input item-stacked-label item-border marg-top-ins">
+
+						<ion-toggle ng-model="data.checked" ng-checked="data.checked" toggle-class="toggle-calm" style="background: none;">Visa/MasterCard</ion-toggle>
+					</label>
+			<!--col-->
+			
+
 			<!--Adresse personnel-->
 
 			<label class="item item-input item-stacked-label item-border marg-top-ins">
-				<span class="input-label input-label-2">Adresse profesionel</span>
-				<input type="text" class="style-input">
+				<span class="input-label input-label-2">num Carte</span>
+				<input type="tel" class="style-input" ng-model="data.numCart">
 			</label>
 			<!--Adresse profesionel-->
 
 			<div class="row padding-null">
 				<div class="col col-50 padd-left-null">
 					<label class="item item-input item-stacked-label item-border marg-top-ins">
-						<span class="input-label input-label-2">Carte bancaire</span>
-						<input type="text" class="style-input">
+						<span class="input-label input-label-2">CCV</span>
+						<input type="tel" class="style-input" ng-model="data.ccv">
 					</label>
 				</div>
 				<!--Carte bancaire-->
 				<div class="col col-50 padd-right-null">
 					<label class="item item-input item-stacked-label item-border marg-top-ins">
-						<span class="input-label input-label-2">CCV</span>
-						<input type="text" class="style-input">
+						<span class="input-label input-label-2">MMAA</span>
+						<input type="text" class="style-input" ng-model="data.mmaa">
 					</label>
 				</div>
 				<!--CCV-->
@@ -73,13 +79,15 @@
 				<input type="text" class="style-input">
 			</label>
 			<!--...-->
+		 </form>
+			<a class="button button-block button-energized button-energized-2" type="submit" ng-click="send()">ENVOYER</a>
+			<a class="button button-block button-energized button-energized-2" data-tap-disabled="true" type="submit" ng-href="#/app/circuit">ENVOYER</a>
 
-	 <a class="button button-block button-energized button-energized-2" type="submit" ng-href="#/app/circuit">ENVOYER</a>
 		</div>
 		<!--content-inscri-1-->
 
 
-    </form>
+
 
   </ion-content>
 </ion-view>

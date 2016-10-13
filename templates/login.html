@@ -1,5 +1,5 @@
 <ion-view hide-nav-bar="true" name="login-view" class="bg-login">
-    <ion-content class="paddingLoginPage">
+    <ion-content class="paddingLoginPage" has-header="true">
         
         <center><img src="img/logo.png" class="logoStyle"></center>
         
@@ -11,20 +11,20 @@
             </label>
                
             <label class="item item-input ion-ios-locked-outline">
-                <input type="text" placeholder="Mot de passe" ng-model="myLogin.password" />
+                <input type="password" placeholder="Mot de passe" ng-model="myLogin.password" />
             </label>
             
             <a class="button button-full button-style-1 button-assertive marg-btn-1" ng-click="connect()">
                 Se connecter
             </a>
-            <a class="button button-full button-style-1 button-assertive" href="#/app/inscription">
+            <a class="button button-full button-style-1 button-assertive" ng-href="#/app/inscription">
                 Créez un compte
             </a>
             <a class=" button button-full button-style-fb button-assertive">
                 <i class="ion-social-facebook">&nbsp;&nbsp;Se connecter avec facebook</i>
             </a>
             
-   <a class="mdp-oublier" ><span>Mot de passe oublié &nbsp? &nbsp;</span>CLIQUEZ ICI</a>
+   <a class="mdp-oublier"  ><span>Mot de passe oublié &nbsp? &nbsp;</span>CLIQUEZ ICI</a>
             
         </div>
         

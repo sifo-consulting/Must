@@ -35,9 +35,23 @@ var mymodule=angular.module('starter.controllers', [])
                                                         });})
 
 
-  .controller('rechercheMapCtrl', function(Markers,$scope,$rootScope, $ionicLoading, $ionicSideMenuDelegate,$cordovaGeolocation) {
+  .controller('rechercheMapCtrl', function(Markers,$scope,$rootScope, $ionicLoading, $ionicSideMenuDelegate,$cordovaGeolocation,$ionicModal) {
                try{
-              var posOptions = {timeout: 10000, enableHighAccuracy: false};
+              $ionicModal.fromTemplateUrl('templates/reserverDirect.html', {
+                                     scope: $scope,
+                                    animation: 'slide-in-up'
+                                   }).then(function(modal) {
+                                  $scope.modal = modal;
+                              });
+ $scope.closeModel = function() {
+    $scope.modal.hide();
+  };
+
+  // Open the login modal
+  $scope.showModel = function() {
+    $scope.modal.show();
+  };
+    var posOptions = {timeout: 10000, enableHighAccuracy: false};
 
               $rootScope.side_menu.style.visibility = "hidden";
               $scope.$watch(function () {
@@ -72,8 +86,8 @@ var mymodule=angular.module('starter.controllers', [])
                $scope.map.animateCamera({
                                 target: new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                                 zoom: 2,
-                                tilt: 60,
-                                bearing: 100,
+                                tilt: 10,
+                                bearing: 10,
                                 duration: 3000
                                 }, function() {
 
@@ -90,9 +104,18 @@ var mymodule=angular.module('starter.controllers', [])
                                               }, function(marker) {
                                                  marker.setDraggable(true);
                                               // Show the info window
-                                              marker.showInfoWindow();
+                                              //marker.showInfoWindow();
 
                                               // Catch the click event
+
+                                               marker.on(plugin.google.maps.event.MARKER_DRAG_END, function() {
+
+                                                                                                 marker.getPosition(function(latLng) {
+                                                                                                       marker.setTitle(latLng.toUrlValue());
+                                                                                                       marker.showInfoWindow();
+                                                                                                     });
+
+                                                                                                      });
                                               marker.on(plugin.google.maps.event.INFO_CLICK, function() {
 
                                                         // To do something...
@@ -104,9 +127,10 @@ var mymodule=angular.module('starter.controllers', [])
                                 });
 
               }catch(e){alert(e);}}
-              var createMarker = function (info){ return $scope.map.addMarker({
-                                                                              position: new plugin.google.maps.LatLng(info.position),
+              var createMarker = function (info){try{ return $scope.map.addMarker({
+                                                                              position: new plugin.google.maps.LatLng(info.lat,info.longg),
                                                                               title: info.title,
+                                                                              id:info.id,
                                                                               snippet: "<strong>This plugin is awesome!</strong>",
                                                                               'icon': {
                                                                               'url': 'file:///android_asset/www/img/icone-scooter.png'
@@ -116,21 +140,25 @@ var mymodule=angular.module('starter.controllers', [])
                                                                               function(marker) {
 
                                                                               // Show the info window
-                                                                              marker.showInfoWindow();
+                                                                             // marker.showInfoWindow();
 
                                                                               // Catch the click event
                                                                               marker.on(plugin.google.maps.event.MARKER_CLICK, function(marker) {
 
                                                                                         // To do something...
-                                                                                        alert("Hello world!"+marker.getTitle() );
+                                                                                        alert(marker.id+"Hello world!"+marker.getTitle() );
                                                                                         });
                                                                               marker.on(plugin.google.maps.event.INFO_CLICK, function(marker) {
 
                                                                                         // To do something...
                                                                                         alert("Hello world!"+marker.getTitle());
+                                                                                $scope.showModel();
 
                                                                                         });
                                                                               } );
+                                                                              }catch(e){
+                                                                                            alert("yyyy "+e);
+                                                                                            }
               };
 
               $scope.generateMarker=function(){
@@ -139,7 +167,8 @@ var mymodule=angular.module('starter.controllers', [])
 
 
               for (i = 0; i < $scope.markers.length; i++){
-              $scope.markers.push(createMarker($scope.markers[i]));
+
+           createMarker($scope.markers[i]);
                                         }}catch(e){
               alert("xxx "+e);
               }};
