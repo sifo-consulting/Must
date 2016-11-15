@@ -1,73 +1,85 @@
-<ion-view view-title="CREER UN COMPTE" class="bg-app">
+<ion-view view-title="CREER UN COMPTE" class="bg-app" >
+    <ion-nav-bar class="bar-stable bar-dark mynavbar">
+        <ion-nav-back-button class="button-clear go-back">Retour
+        </ion-nav-back-button>
+    </ion-nav-bar>
 
 
     <ion-content>
-  <div class="content-inscri-1">
-     <div class="list">
-         <form name="myForm" novalidate>
-             <div class="row">
-       <div class="col col-50">
-       <label class="item item-input item-stacked-label item-border">
-         <span class="input-label input-label-2">Prénom</span>
-         <input type="text" class="style-input" name="prenom" required ng-model="inscri.prenom">
-       </label>
-    </div>
-    <div class="col col-50">
-       <label class="item item-input item-stacked-label item-border">
-         <span class="input-label input-label-2">Nom</span>
-         <input type="text" class="style-input" required ng-model="inscri.nom">
-       </label>
-    </div>
-   </div>
-   <div class="padding">
-     <label class="item item-input item-stacked-label item-border">
-       <span class="input-label input-label-2">Adresse e-mail</span>
-       <input type="text" class="style-input" required ng-model="inscri.email">
-     </label> 
-   </div>  
 
-  <div class="row">
-    <div class="col col-33">
-     <label class="item item-input item-stacked-label item-border item-select">
-       <span class="input-label input-label-2">Mobile</span>
-    
-       <select class="item-select-2 ">
-        <option ng-repeat="cnt in country" class=" {{cnt.code | lowercase}}">  {{cnt.dial_code}}  </option>
-        
-       </select>
-     </label>   
-    </div>
-    <div class="col">
-   <label class="item item-input item-stacked-label item-border">
-       <!--<span class="input-label input-label-2">Mobile</span>-->
-       <input type="tel" class="style-input marg-1" ng-model="inscri.num" required>
-     </label> 
-    </div>
-  </div>
-      </form>
-         <div class="padding">
-      <label class="item item-input item-stacked-label item-border">
-      <span class="input-label input-label-2">Mot de passe</span>
-      <input type="password" class="style-input" ng-model="inscri.password" ng-minlength="4" required>
-    </label>
+            <div class="content-inscri-1">
+                <div class="list">
+                <form name="myForm" novalidate>
+                    <div class="row">
+                        <div class="col col-50">
+                            <label class="item item-input item-stacked-label item-border">
+                                <span class="input-label input-label-2">Prénom</span>
+                                <input type="text" class="style-input" name="prenom" required ng-model="inscri.prenom">
+                            </label>
+                        </div>
+                        <div class="col col-50">
+                            <label class="item item-input item-stacked-label item-border">
+                                <span class="input-label input-label-2">Nom</span>
+                                <input type="text" class="style-input" required ng-model="inscri.nom">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="padding">
+                        <label class="item item-input item-stacked-label item-border">
+                            <span class="input-label input-label-2">Adresse e-mail</span>
+                            <input type="email" class="style-input" required ng-model="inscri.email">
+                        </label>
+                    </div>
 
-      <div class="padding">
-          <p ng-show="myForm.inscri.prenom.$error.required">* prenom is required</p>
-          <p ng-show="myForm.inscri.email.$invalid && !myForm.inscri.email.$pristine">* Username must be an email address</p>
-          <p ng-show="myForm.inscri.username.$error.minlength">* Username must be longer than 5 characters</p>
-         
-      </div>
-   <a  class="button button-full button-stable btn-suivant" ng-click="send()" ng-disabled="myForm.$invalid">
-     SUIVANT
-   </a>
+                    <div class="row">
+                        <div class="col col-33">
+
+                             <label class="item item-input item-stacked-label item-border item-select">
+                                <span class="input-label input-label-2">Mobile</span>
+                                <br>
+                                <select name="service_id" class="item-select-2" ng-model="inscri.mySelect" ng-change="showSelectValue(inscri.mySelect)" >
+                                    <option ng-selected= "{{cnt.dial_code == inscri.mySelect}}" ng-repeat="cnt in country" class=" {{cnt.code | lowercase}}"  value="{{cnt.dial_code}}"> {{cnt.name}} {{cnt.dial_code}}  </option>
+
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col">
+                            <label class="item item-input item-stacked-label item-border">
+                                <!--<span class="input-label input-label-2">Mobile</span>-->
+                                <input type="tel" class="style-input marg-1" ng-model="inscri.num" required>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="padding">
+                    <label class="item item-input item-stacked-label item-border">
+                        <span class="input-label input-label-2">Mot de passe</span>
+                        <input type="password" class="style-input" ng-model="inscri.password" ng-minlength="4" required>
+                    </label>
+
+                    <div class="padding">
+                        <p ng-show="myForm.inscri.prenom.$error.required">* prenom is required</p>
+                        <p ng-show="myForm.inscri.email.$invalid && !myForm.inscri.email.$pristine">* Username must be an email address</p>
+                        <p ng-show="myForm.inscri.username.$error.minlength">* Username must be longer than 5 characters</p>
+                        <span ng-show="myForm.mySelect.$error.required">Select Code</span>
+
+                    </div>
+                    <a  class="button button-full button-stable btn-suivant" ng-click="send()" ng-disabled="myForm.$invalid " >
+                        SUIVANT
+                    </a>
+                    <!--ng-click="send()" ng-disabled="myForm.$invalid "-->
+            </div>
 
 
-   <button class="button button-full button-energized button-energized-2"><i class="ion-social-facebook"></i>&nbsp;&nbsp;Se connecter avec facebook</button>
-  </div>
 
-  </div>
+        <div class="padding">
+                    <button class="button button-full button-energized button-energized-2"><i class="ion-social-facebook"></i>&nbsp;&nbsp;Se connecter avec facebook</button>
+        </div>
+        </div>
 
- </div> 
- 
-  </ion-content>
+            </div>
+
+        </div>
+
+    </ion-content>
 </ion-view>

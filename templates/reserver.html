@@ -1,49 +1,63 @@
-<ion-view view-title="RESERVER" class="bg-app">
-  <ion-content>
+<ion-modal-view >
+    <ion-header-bar>
+        <h1 class="title">Réserver</h1>
+        
+        <a  class="buttons"  ng-click="closeModel()">Close</a>
+    </ion-header-bar>
+    <ion-content >
+        
+        <div class="reservation-top padding " ng-init="clicked=true">
+            <div class="avatar-2">
+                <img src="http://must.sifo-consulting.com/MustProject/web/users_pictures/{{$root.allMarkers[data.id].user_photo}}" class="avatar-upload">
+                    
+                    </div>
+            <h2>{{$root.allMarkers[data.id].nom}}</h2>
+            <h4>{{$root.allMarkers[data.id].commercialName}}</h4>
+            <p ><em>{{$root.allMarkers[data.id].Puissance}}cm<SUP>3</SUP></em></p>
+            
+            <i class="ion-star star-jaune"  ng-init="i=0" ng-repeat="i in getNumber($root.allMarkers[data.id].rat) "></i>
+            <i class="ion-ios-star-outline"  ng-init="y=0"  ng-repeat="y in getNumber(5-$root.allMarkers[data.id].rate) "> </i>
+            <a class="button button-full button-black" ng-href="#/app/avis">
+                voir tous les avis
+            </a>
+        </div>
+        
+        <div class="galerie-photos">
+            <div class="row padding-null">
+                <div class="col padding-null">
+                    <img src="img/moto-1.jpg">
+                        </div>
+                <div class="col padding-null">
+                    <img ng-src="http://must.sifo-consulting.com/MustProject/web/users_pictures/{{$root.allMarkers[data.id].moto_photo}}">
+                        </div>
+                <div class="col padding-null">
+                    <img ng-src="http://must.sifo-consulting.com/MustProject/web/users_pictures/{{$root.allMarkers[data.id].moto_photo}}">
+                        </div>
+            </div>
+        </div>
+        
+        <div class="reservation-bottom padding">
+            <div class="parag">
+                <p>
+                </p>
+            </div>
+            <center><h1>30<sup>€</sup></h1></center>
+            
+            <label class="item item-input input-propose">
+                <input type="tel" placeholder="propose..." ng-model="data.montant" />
+                
+            </label>
+            <!--<label class="item item-input input-propose">
+             
+             <input    ng-model="data.startTime"
+             placeholder="Date"  type="datetime-local" type="datetime-local" ng-class="{'placeholderclass': clicked}" ng-focus="clicked=false;" data-date-format="dd-MM-yyyy-hh:mm"  class="dateclass placeholderclass" />
+             </label>-->
+            <a ng-click="goTo($root.allMarkers[data.id].type_id)" class="button button-full button-valider">
+                Valider
+            </a>
+        </div>
+        
+    </ion-content>
+</ion-modal-view>
 
-    	<div class="reservation-top padding">
-    		<div class="avatar-2">
-		      <img src="img/image.png">
-		    </div>
-			<h2>Alex</h2>
-			<h4>Honda</h4>
-			<p><em>200cm<SUP>3</SUP></em></p>
-			
-			<i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i>
-		      <i class="ion-ios-star-outline"></i><i class="ion-ios-star-outline"></i>
-			<a class="button button-full button-black" ng-href="#/app/avis">
-				voir tous les avis
-			</a>
-		</div>
-
-		<div class="galerie-photos">
-			<div class="row padding-null">
-				<div class="col padding-null">
-					<img src="img/moto-1.jpg">
-				</div>
-				<div class="col padding-null">
-					<img src="img/moto-1.jpg">
-				</div>
-				<div class="col padding-null">
-					<img src="img/moto-1.jpg">
-				</div>
-			</div>
-		</div>
-
-		<div class="reservation-bottom padding">
-			<div class="parag">
-				<p>
-					Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500
-				</p>
-			</div>
-			<center><h1>30<sup>€</sup></h1></center>
-			
-			<label class="item item-input input-propose">
-			    <input type="text" placeholder="propose...">
-			</label>
-			<button class="button button-full button-valider">
-				valider
-			</button>
-		</div>
-  </ion-content>
-</ion-view>
+ 

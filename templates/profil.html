@@ -1,5 +1,60 @@
 <ion-view view-title="PROFIL">
   <ion-content>
-    <h1>profil</h1>
+    <div class="content-inscri-2 padding">
+
+
+        <div class="addFile">
+          <div class="row responsive-sm">
+            <div class="col">
+              <img src="http://must.sifo-consulting.com/MustProject/web/users_pictures/{{data.photo}}" ng-hide="data.ftLoad" class="avatar-upload" />
+              <img  ng-show="data.ftLoad[0]" ng-src="{{data.picData[0]}}" class="avatar-upload" />
+            </div>
+            <div class="col">
+              <button type="button" class="button button-upload" ng-click="showConfirm(0)">
+                  {{data.nom}}
+                  <ion-spinner ng-hide="showing[0]" class="crescent"></ion-spinner><span class="button-text"></span></a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <label class="item item-input item-stacked-label item-border marg-top-ins">
+          <span class="input-label input-label-2">Nom</span>
+          <input type="text" class="style-input" ng-model="data.nom">
+        </label>
+        <label class="item item-input item-stacked-label item-border marg-top-ins">
+            <span class="input-label input-label-2">Prenom</span>
+            <input type="text" class="style-input" ng-model="data.prenom">
+        </label>
+        <!--Code-->
+
+        <div class="row padding-null">
+          <div class="col col-50 padd-left-null">
+            <label class="item item-input item-stacked-label item-border marg-top-ins">
+              <span class="input-label input-label-2">Domicile</span>
+              <input type="text" class="style-input" ng-model="data.adrpersonelle">
+            </label>
+          </div>
+          <div class="col col-50 padd-right-null">
+            <label class="item item-input item-stacked-label item-border marg-top-ins">
+              <span class="input-label input-label-2">Bureau</span>
+              <input type="text" class="style-input" name="nom" ng-model="data.adresPro">
+            </label>
+          </div>
+        </div>
+        <!--row-->
+
+
+ 
+
+      
+
+      <a class="button button-block button-energized button-energized-2"  type="submit" ng-click="send()">ENVOYER</a>
+
+
+    </div>
+    <!--content-inscri-1-->
+
+
   </ion-content>
 </ion-view>

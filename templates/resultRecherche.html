@@ -1,61 +1,20 @@
 <ion-view view-title="Resultat recherche" class="bg-app">
   <ion-content>
   	<div class="recherche">
-	    <div class="list">
+		  <div class="card list">
+              <center><ion-spinner ng-hide="showing" class="crescent"></ion-spinner><span class="button-text"></span>
+              </center>
+		    <a class="item item-avatar icone-voir" ng-click="showModel($index)" ng-repeat="mrk in allMarkers track by $index">
+		      <img ng-src="http://must.sifo-consulting.com/MustProject/web/users_pictures/{{mrk.user_photo}}">
+		      <h2>{{mrk.nom}}</h2>
+		      <p>{{mrk.commercialName}}<br>
+		      <em>{{mrk.Puissance}}cm<SUP>3</SUP></em></p>
+				<i class="ion-star star-jaune" ng-init="i=0" ng-repeat="i in getNumber(mrk.rate)  "></i>
 
-		    <a class="item item-avatar icone-voir" href="#/app/reserver">
-		      <img src="img/image.png">
-		      <h2>Alex</h2>
-		      <p>Honda<br>
-		      <em>200cm<SUP>3</SUP></em></p>
-		      <i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i>
-		      <i class="ion-ios-star-outline"></i><i class="ion-ios-star-outline"></i>
+				<i class="ion-ios-star-outline"  ng-init="y=0" ng-repeat="y in getNumber(5-mrk.rate) "> </i>
 		    </a>
 		   
-		   
 
-		    <a class="item item-avatar icone-voir" href="#/app/reserver">
-		      <img src="img/image.png">
-		      <h2>Alex</h2>
-		      <p>Honda<br>
-		      <em>200cm<SUP>3</SUP></em></p>
-		      <i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i>
-		      <i class="ion-ios-star-outline"></i><i class="ion-ios-star-outline"></i>
-		    </a>
-		   
-		   
-
-		    <a class="item item-avatar icone-voir" href="#/app/reserver">
-		      <img src="img/image.png">
-		      <h2>Alex</h2>
-		      <p>Honda<br>
-		      <em>200cm<SUP>3</SUP></em></p>
-		      <i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i>
-		      <i class="ion-ios-star-outline"></i><i class="ion-ios-star-outline"></i>
-		    </a>
-		   
-		   
-
-		    <a class="item item-avatar icone-voir" href="#/app/reserver">
-		      <img src="img/image.png">
-		      <h2>Alex</h2>
-		      <p>Honda<br>
-		      <em>200cm<SUP>3</SUP></em></p>
-		      <i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i>
-		      <i class="ion-ios-star-outline"></i><i class="ion-ios-star-outline"></i>
-		    </a>
-		   
-		   
-
-		    <a class="item item-avatar icone-voir" href="#/app/reserver">
-		      <img src="img/image.png">
-		      <h2>Alex</h2>
-		      <p>Honda<br>
-		      <em>200cm<SUP>3</SUP></em></p>
-		      <i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i>
-		      <i class="ion-ios-star-outline"></i><i class="ion-ios-star-outline"></i>
-		    </a>
-		   
 		   
 
 		</div>

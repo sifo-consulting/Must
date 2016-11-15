@@ -1,51 +1,53 @@
-<ion-view view-title="RESERVATION PAR CIRCUIT" class="bg-app">
-  <ion-content>
+<ion-view view-title="Ajouter un trajet" class="bg-app">
+    <ion-nav-bar class="bar-stable bar-dark mynavbar">
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left" >
+            </button>
+        </ion-nav-buttons>
+
+    <ion-content>
     
 
-    	<div class="recherche">
+    	<div class="recherche" ng-init="clicked=true">
     		<div class="padding">
 	    		<label class="item item-input input-search">
-		          <input type="text" placeholder="Recherche">
+                    <input vs-google-autocomplete="options"
+                    
+                        ng-model="data.depart"
+                        name="address"
+                        type="text" placeholder="départ" ng-focus="disableTap()" />
+		          
 		          <i class="icon ion-search placeholder-icon"></i>
 		        </label>
-		    </div>
-		    <div class="reslt padding">
-		    	<h4>Résultats de recherche (5)</h4>
-		   	</div>
-	   		<div class="list">
+                <label class="item item-input input-search">
+                    <input vs-google-autocomplete="options"
+                    ng-model="data.arriver"
+                    name="address"
+                    type="text" placeholder="Arriver" ng-focus="disableTap()" />
+                    
+                    <i class="icon ion-search placeholder-icon"></i>
+                </label>
+                <ion-list>
+                    <div class="item" ion-datetime-picker ng-model="data.startTime" ng-init="data.startTime='2016-12-12 12:12'">
+                        {{data.startTime| date: "yyyy-MM-dd H:mm"}}
+                    </div>
+                </ion-list>
+                <label class="item item-input input-search">
+                    <input
+                           ng-model="data.montant"
+                           name="montant"
+                           type="text" placeholder="Montant"   />
 
-			    <a class="item item-avatar icone-voir" href="#/app/circuit2">
-			      <img src="img/image.png">
-			      <h2>Alex</h2>
-			      <p>Honda<br>
-			      <em>de 55 Quai d'Orsay, 75007 Paris à 9-11 Boulevard Raspail, 75007 Paris</em></p>
-			    </a>
-			   <a class="item item-avatar icone-voir" href="#/app/circuit2">
-			      <img src="img/image.png">
-			      <h2>Alex</h2>
-			      <p>Honda<br>
-			      <em>de 55 Quai d'Orsay, 75007 Paris à 9-11 Boulevard Raspail, 75007 Paris</em></p>
-			    </a>
-			   <a class="item item-avatar icone-voir" href="#/app/circuit2">
-			      <img src="img/image.png">
-			      <h2>Alex</h2>
-			      <p>Honda<br>
-			      <em>de 55 Quai d'Orsay, 75007 Paris à 9-11 Boulevard Raspail, 75007 Paris</em></p>
-			    </a>
-			   <a class="item item-avatar icone-voir" href="#/app/circuit2">
-			      <img src="img/image.png">
-			      <h2>Alex</h2>
-			      <p>Honda<br>
-			      <em>de 55 Quai d'Orsay, 75007 Paris à 9-11 Boulevard Raspail, 75007 Paris</em></p>
-			    </a>
-			   <a class="item item-avatar icone-voir" href="#/app/circuit2">
-			      <img src="img/image.png">
-			      <h2>Alex</h2>
-			      <p>Honda<br>
-			      <em>de 55 Quai d'Orsay, 75007 Paris à 9-11 Boulevard Raspail, 75007 Paris</em></p>
-			    </a>
-			   
-			</div>
+                    <i class="icon ion-search placeholder-icon"></i>
+                </label>
+
+
+		    </div>
+            <div class="padding" >
+                <a  class="button button-block button-energized button-energized-2" ng-click="search()" >
+                    Envoyer
+                </a>
+            </div>
 		</div>
 
   </ion-content>

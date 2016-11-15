@@ -1,5 +1,9 @@
-<ion-view hide-back-button="true" view-title="Validation" class="bg-app">
-  <ion-content>
+<ion-view   view-title="Validation" class="bg-app">
+	<ion-nav-bar class="bar-stable bar-dark mynavbar">
+		<ion-nav-back-button class="button-clear go-back">Retour
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-content>
 
   		<div class="content-inscri-2 padding">
 
@@ -7,7 +11,7 @@
 <form name="myForm">
 		  	<label class="item item-input item-stacked-label item-border marg-top-ins">
 				<span class="input-label input-label-2">Code</span>
-				<input type="tel" class="style-input"  ng-minlength="5" ng-model="data.code">
+				<input type="tel" class="style-input"  minlength="5" maxlength="5" ng-model="data.code">
 			</label>
 			</form>
 			<!--Code-->
@@ -18,6 +22,7 @@
 			</div>
 
 	 <a class="button button-block button-energized button-energized-2"  ng-click="valider()" ng-disabled="myForm.$invalid">ENVOYER</a>
+			<!-- ng-click="valider()" ng-disabled="myForm.$invalid"-->
 		</div>
 		<!--content-inscri-1-->
 

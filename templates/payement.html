@@ -1,0 +1,75 @@
+<ion-view view-title="Paiement">
+    <ion-content>
+        <div class="content-inscri-2 padding">
+            
+            
+             <br/><br/>
+            <label class="item item-input item-stacked-label item-border marg-top-ins">
+                <select name="service_id" class="item-select-2" ng-model="data.master" ng-change="showSelectValue(data.master)" required>
+                    <option ng-selected= "true"   value="visa">Visa  </option>
+                    <option     value="MasterCard">MasterCard  </option>
+                    <option     value="Paypal">Paypal  </option>
+                    
+                </select>
+                
+            </label>
+            <!--col-->
+            
+            
+            <!--Adresse personnel-->
+            <div ng-show="data.master!='Paypal'">
+            <label class="item item-input item-stacked-label item-border marg-top-ins">
+                <span class="input-label input-label-2">num Carte</span>
+                <input type="tel" class="style-input" minlength="16" maxlength="16" ng-model="data.numcrt">
+                    </label>
+            <!--Adresse profesionel-->
+            
+            <div class="row padding-null">
+                <div class="col col-50 padd-left-null">
+                    <label class="item item-input item-stacked-label item-border marg-top-ins">
+                        <span class="input-label input-label-2">CCV</span>
+                        <input type="tel" class="style-input" minlength="3" maxlength="3" ng-model="data.cvv">
+                            </label>
+                </div>
+                <!--Carte bancaire-->
+                <div class="col col-50 padd-right-null">
+                    <label class="item item-input item-stacked-label item-border marg-top-ins">
+                        <span class="input-label input-label-2">MMAA</span>
+                        <input type="tel" maxlength="4" class="style-input" ng-model="data.mmaa">
+                            </label>
+                </div>
+                <!--CCV-->
+            </div>
+            </div>
+            <!--row-->
+            <div ng-show="data.master=='Paypal'">
+                <label class="item item-input item-stacked-label item-border marg-top-ins">
+                    <span class="span1 input-label input-label-2">email PayPal</span>
+
+                    <input type="email" class="style-input  input-block-level" ng-model="data.numcrt" />
+                    <!-- payments-validate="card" payments-format="card" payments-type-model="type" ng-class="myForm.data.numCart.$card.type"-->
+                </label>
+                <!--Adresse profesionel-->
+
+                <div class="row padding-null">
+                    <div class="col col-50 padd-left-null">
+                        <label class="item item-input item-stacked-label item-border marg-top-ins">
+                            <span class="input-label input-label-2">Mot de passe</span>
+                            <input type="password"  minlength="3" maxlength="3" class="style-input input-block-level"    ng-model="data.ccv" />
+                            <!--payments-validate="cvc" payments-format="cvc" payments-type-model="type"-->
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            
+            
+            <a class="button button-block button-energized button-energized-2"  type="submit" ng-click="send()">ENVOYER</a>
+            
+            
+        </div>
+        <!--content-inscri-1-->
+        
+        
+    </ion-content>
+</ion-view>

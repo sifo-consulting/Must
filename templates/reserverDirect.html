@@ -1,24 +1,22 @@
-<ion-modal-view>
+<ion-modal-view >
 	<ion-header-bar>
 		<h1 class="title">Réserver</h1>
 
 			<a  class="buttons"  ng-click="closeModel()">Close</a>
+ </ion-header-bar>
+	<ion-content >
 
-
-
-	</ion-header-bar>
-	<ion-content>
-
-		<div class="reservation-top padding ">
+		<div class="reservation-top padding " ng-init="clicked=true">
 			<div class="avatar-2">
-				<img src="img/image.png">
-			</div>
-			<h2>Alex</h2>
-			<h4>Honda</h4>
-			<p><em>200cm<SUP>3</SUP></em></p>
+				<img src="http://must.sifo-consulting.com/MustProject/web/users_pictures/{{markers[data.id].user_photo}}" class="avatar-upload">
 
-			<i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i><i class="ion-star star-jaune"></i>
-			<i class="ion-ios-star-outline"></i><i class="ion-ios-star-outline"></i>
+			</div>
+			<h2>{{markers[data.id].nom}}</h2>
+			<h4>{{markers[data.id].commercialName}}</h4>
+            <p ><em>{{markers[data.id].Puissance}}cm<SUP>3</SUP></em></p>
+
+		 <i class="ion-star star-jaune"   ng-repeat="i in getNumber(markers[data.id].rat) "></i>
+			<i class="ion-ios-star-outline"   ng-repeat="y in getNumber(5-markers[data.id].rate) "> </i>
 			<a class="button button-full button-black" ng-href="#/app/avis">
 				voir tous les avis
 			</a>
@@ -30,10 +28,10 @@
 					<img src="img/moto-1.jpg">
 				</div>
 				<div class="col padding-null">
-					<img src="img/moto-1.jpg">
+					<img ng-src="http://must.sifo-consulting.com/MustProject/web/users_pictures/{{markers[data.id].moto_photo}}">
 				</div>
 				<div class="col padding-null">
-					<img src="img/moto-1.jpg">
+					<img ng-src="http://must.sifo-consulting.com/MustProject/web/users_pictures/{{markers[data.id].moto_photo}}">
 				</div>
 			</div>
 		</div>
@@ -41,17 +39,23 @@
 		<div class="reservation-bottom padding">
 			<div class="parag">
 				<p>
-					Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500
-				</p>
+					 	</p>
 			</div>
 			<center><h1>30<sup>€</sup></h1></center>
 
 			<label class="item item-input input-propose">
-				<input type="text" placeholder="propose...">
+				<input type="text" placeholder="propose..." ng-model="data.montant" />
+              
 			</label>
-			<button class="button button-full button-valider">
-				valider
-			</button>
+           <!--<label class="item item-input input-propose">
+                
+                    <input    ng-model="data.startTime"
+                         placeholder="Date"  type="datetime-local" type="datetime-local" ng-class="{'placeholderclass': clicked}" ng-focus="clicked=false;" data-date-format="dd-MM-yyyy-hh:mm"  class="dateclass placeholderclass" />
+                        </label>-->
+			<a ng-click="goTo(markers[data.id].type_id)" class="button button-full button-valider">
+               Valider
+			</a>
 		</div>
+
 	</ion-content>
 </ion-modal-view>

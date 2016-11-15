@@ -1,48 +1,68 @@
-<ion-side-menus enable-menu-with-back-views="false" ng-controller="menucontroller">
+<ion-side-menus enable-menu-with-back-views="false" >
   <ion-side-menu-content>
     <ion-nav-bar class="bar-stable bar-dark mynavbar">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"  ng-click="siderAction()">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left" >
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu side="left"    width="myWidthValue + 150" class="changeMenu" enable-menu-with-back-views="false">
+  <ion-side-menu side="left"    width="myWidthValue + 250" class="changeMenu" ng-hide="hideLeft">
     <ion-content>
       <ion-list>
+        <div class="avatarMenu"> 
+            
+                <a class="item item-avatar" href="#/app/profil">
+                  <img src="http://must.sifo-consulting.com/MustProject/web/users_pictures/{{$root.photo}}">
+                      <h2>{{$root.myName}}</h2>
+                </a>
+            
+        </div>    
 
-        <ion-item menu-close href="#/app/rechercheMap" >
-          <img src="img/menu-recherche.png">
-          Recherche
+<ion-item menu-close href="#/app/actif">
+    <img src="img/menu-profil.png">
+        <span>Activer</span>
         </ion-item>
-        <ion-item menu-close href="#/app/profil">
+<ion-item menu-close href="#/app/profil">
           <img src="img/menu-profil.png">
-          Mon profil
+          <span>Mon profil</span>
         </ion-item>
         <ion-item menu-close href="#/app/circuit">
           <img src="img/menu-circuit.png">
-          Circuit
+          <span>Ajouter un trajet</span>
         </ion-item>
         <ion-item menu-close href="#/app/historique">
           <img src="img/menu-historique.png">
-          Historique
+          <span>Historique</span>
         </ion-item>
         <ion-item menu-close href="#/app/plaindre">
           <img src="img/menu-plaindre.png">
-          Se plaindre
+          <span>Se plaindre</span>
+        </ion-item>        
+        <ion-item menu-close href="#/app/payement">
+          <i class="ion-card"></i>
+          <span>Paiement</span>
+        </ion-item>        
+        <ion-item menu-close href="#/app/communique">
+          <i class="ion-ios-compose"></i>
+          <span>Communiqué avec nous</span>
+        </ion-item>        
+        <ion-item menu-close href="#/app/Fidelite">
+          <i class="ion-ios-heart"></i>
+          <span>Fidelité</span>
         </ion-item>
-
-        <!--
-        <ion-item menu-close href="#/app/playlists">
-          <img src="img/menu-recherche.png"><br>
-          Playlists
+        <ion-item menu-close ng-click="logout()" href="">
+            <span >Logout</span>
         </ion-item>
-        
+        <ion-item menu-close href="#/app/propos">
+          <span>A propos</span>
+        </ion-item>
+         <!--
         <ion-item menu-close href="#/app/inscription">
           inscription
         </ion-item>

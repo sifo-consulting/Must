@@ -1,0 +1,40 @@
+<ion-view view-title="En attente" hide-back-button="true">
+    <ion-nav-bar class="bar-stable bar-dark mynavbar">
+        <ion-nav-back-button class="button-clear go-back">
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    
+    <ion-content>
+    <div class="gaugeContainer">
+<center><h4>En attente de  confirmation </h4></center>
+<div class="progress-wrapper">
+    <div class="progress" ng-style="getStyle()">{{ time }}</div>
+    <div
+        round-progress
+        max="180"
+        current="timerCurrent"
+        color="{{ getColor() }}"
+        bgcolor="{{ bgColor }}"
+        radius="{{ radius }}"
+        semi="isSemi"
+        rounded="rounded"
+        clockwise="clockwise"
+        responsive="responsive"
+        stroke="{{ stroke }}"
+        animation="{{ currentAnimation }}">
+        <svg>
+            <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="20%"  stop-color="green"/>
+                <stop offset="80%" stop-color="gold"/>
+            </linearGradient>
+        </svg>
+    </div>
+</div>
+    </div>
+<div class="padding" >
+<a  class="button button-block button-energized button-energized-2" ng-click="cancel()" >
+  Annuler ma demande
+</a>
+</div>
+  </ion-content>
+</ion-view>

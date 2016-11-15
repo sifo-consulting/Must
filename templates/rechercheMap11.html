@@ -1,0 +1,43 @@
+<ion-view view-title="Recherche Map" >
+  <ion-content>
+   
+  		<div class="map" id="map" ng-model="map">
+  		
+  		
+	  		<div class="padding pos-dep-arr">
+				<label class="item item-input item-stacked-label ion-ios-search ion-rech">
+				    <span class="input-label input-label-rech">Départ</span>
+				    <input type="text" id="input" placeholder="63120 Vollore-Ville" ng-focus="focused()" ng-model="data.input" ng-blur="getDist()">
+				</label>
+				
+				<label class="item item-input item-stacked-label ion-ios-search ion-rech" >
+				    <span class="input-label input-label-rech">arrivée</span>
+				    <input type="text" id="input2" placeholder="63120 Vollore-Ville" ng-model="data.input2" ng-focus="focused2()" ng-blur="getDist()">
+				</label>
+			</div>
+			<div class="pos-dist-temp">
+				<div class="padding">
+					<div class="dist-temp">
+						<div class="row">
+							<div class="col border-right">
+								<span>Distance</span>
+								<p>{{data.distance}}</p>
+							</div>
+							<div class="col">
+								<span>Temps</span>
+								<p class="ion-android-bicycle">{{data.time}} </p>
+								<p class="ion-android-car">{{data.time2}}</p>
+							</div>
+						</div>
+						<!--row-->
+					</div>
+					<a  ng-click="showRecherche()" class="btn-go">
+						<img src="img/btn-go.png">
+					</a>
+				</div>
+			</div>
+		</div>
+ 
+  </ion-content>
+</ion-view>
+

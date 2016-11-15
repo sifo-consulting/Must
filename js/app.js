@@ -4,7 +4,14 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var mymodule=angular.module('starter', ['ionic' ,'starter.controllers','ngCordova'])
+//Stripe.setPublishableKey('fillMePlease');
+document.addEventListener("deviceready", function(){navigator.splashscreen.hide();
+
+    // Get a reference to the plugin.
+   
+
+}, false);
+var mymodule=angular.module('starter', ['ionic' ,'starter.controllers','ngCordova','vsGoogleAutocomplete','angular-svg-round-progress','ion-datetime-picker'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,18 +27,22 @@ var mymodule=angular.module('starter', ['ionic' ,'starter.controllers','ngCordov
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
-    }
-  });
+                       }                           }) ;
 })
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
  //$ionicConfigProvider.backButton.text('').icon('ion-ios7-arrow-left');
-        $stateProvider
+     if (!ionic.Platform.isIOS()) {
+         $ionicConfigProvider.scrolling.jsScrolling(false);
+       }
+      // $ionicConfigProvider.views.maxCache(0);
+    $stateProvider
 
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html'
+    templateUrl: 'templates/menu.html',
+    controller:'menucontroller'
   })
 
   .state('app.login', {
@@ -71,28 +82,21 @@ var mymodule=angular.module('starter', ['ionic' ,'starter.controllers','ngCordov
         }
       }
     })
-      .state('app.reserver', {
-                     url: '/reserver',
-                     views: {
-                     'menuContent': {
-                     templateUrl: 'templates/reserver.html'
-                     }
-                     }
-                     })
-                       .state('app.rechercheMap2', {
-               url: '/rechercheMap2',
+    .state('app.actif', {
+               url: '/actif',
                views: {
                'menuContent': {
-               templateUrl: 'templates/rechercheMap2.html',
-               controller:'circuitCtrl'
+               templateUrl: 'templates/actif.html',
+               controller: 'actifCtrl'
                }
                }
                })
          .state('app.circuit2', {
-                                       url: '/circuit2',
+                                       url: '/circuit2?id',
                                        views: {
                                        'menuContent': {
-                                       templateUrl: 'templates/circuit2.html'
+                                       templateUrl: 'templates/circuit2.html',
+                                       controller:'circuitCtrl2'
                                        }
                                        }
                                        })
@@ -114,14 +118,23 @@ var mymodule=angular.module('starter', ['ionic' ,'starter.controllers','ngCordov
                                }
                            })
    .state('app.resultRecherche', {
-                                          url: '/resultRecherche',
+                                          url: '/resultRecherche?source&destination&lat&lng',
                                           views: {
                                           'menuContent': {
                                           templateUrl: 'templates/resultRecherche.html',
-                                          controller:"resultatRechercheCtrl"
+                                            controller:"resultatRechercheCtrl"
                                           }
                                           }
                                           })
+  .state('app.waiting', {
+                                              url: '/waiting/:id/:dep/:arr/:lat/:lng/:dateTime/:price',
+                                              views: {
+                                              'menuContent': {
+                                              templateUrl: 'templates/waiting.html',
+                                                controller:"waitingCtrl"
+                                              }
+                                              }
+                                              })
     .state('app.avis2', {
                                              url: '/avis2',
                                              views: {
@@ -162,10 +175,44 @@ var mymodule=angular.module('starter', ['ionic' ,'starter.controllers','ngCordov
                                                  url: '/profil',
                                                  views: {
                                                  'menuContent': {
-                                                 templateUrl: 'templates/profil.html'
+                                                 templateUrl: 'templates/profil.html',
+                                                  controller:"inscription2Ctrl"
                                                  }
                                                  }
                                                  })
+        .state('app.payement', {
+               url: '/payement',
+               views: {
+               'menuContent': {
+               templateUrl: 'templates/payement.html',
+               controller:"profilCtrl"
+               }
+               }
+               })
+  .state('app.communique', {
+                 url: '/communique',
+                 views: {
+                 'menuContent': {
+                 templateUrl: 'templates/communique.html'
+                 }
+                 }
+                 })
+   .state('app.Fidelite', {
+                  url: '/Fidelite',
+                  views: {
+                  'menuContent': {
+                  templateUrl: 'templates/Fidelite.html'
+                  }
+                  }
+                  })
+      .state('app.propos', {
+                      url: '/propos',
+                      views: {
+                      'menuContent': {
+                      templateUrl: 'templates/propos.html'
+                      }
+                      }
+                      })
   .state('app.rechercheMap', {
     url: '/rechercheMap',
     views: {
@@ -176,5 +223,5 @@ var mymodule=angular.module('starter', ['ionic' ,'starter.controllers','ngCordov
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/profil');
+  $urlRouterProvider.otherwise('/app/login');
 });

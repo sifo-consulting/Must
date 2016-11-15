@@ -1,42 +1,50 @@
-<ion-view view-title="Recherche Map">
+<ion-view view-title="Recherche Map" >
   <ion-content>
    
   		<div class="map" id="map" ng-model="map">
-  		
+   
   		
 	  		<div class="padding pos-dep-arr">
-				<label class="item item-input item-stacked-label ion-ios-search ion-rech">
+				<label class="item backBlanBck item-input item-stacked-label ion-ios-search ion-rech">
 				    <span class="input-label input-label-rech">Départ</span>
-				    <input type="text" placeholder="63120 Vollore-Ville">
+				    <input type="text" vs-google-autocomplete="options" id="input" placeholder="Votre adresse de départ" ng-focus="disableTap();focused()" ng-model="data.input" ng-blur="getDist()"  />
 				</label>
 				
-				<label class="item item-input item-stacked-label ion-ios-search ion-rech">
-				    <span class="input-label input-label-rech">arrivée</span>
-				    <input type="text" placeholder="63120 Vollore-Ville">
+				<label class="item backBlanBck item-input item-stacked-label ion-ios-search ion-rech" >
+				    <span class="input-label input-label-rech">Arrivée</span>
+				    <input type="text" vs-google-autocomplete="options" id="input2" placeholder="Votre adresse d'arriver" ng-model="data.input2" ng-focus="disableTap();focused2()" ng-blur="getDist()" >
 				</label>
 			</div>
-			<div class="pos-dist-temp">
-				<div class="padding">
-					<div class="dist-temp">
-						<div class="row">
-							<div class="col border-right">
-								<span>Distance</span>
-								<p>12km</p>
-							</div>
-							<div class="col">
-								<span>Temps</span>
-								<p>30min</p>
-							</div>
-						</div>
-						<!--row-->
-					</div>
-					<a  ng-click="showModel()" class="btn-go">
-						<img src="img/btn-go.png">
-					</a>
-				</div>
-			</div>
-		</div>
- 
+            
+            <div   style="position:absolute;bottom:0px;width:100%;">
+                <div class="padding">
+                    <div class="dist-temp">
+                        <div class="row">
+                            <div class="col border-right">
+                                <span>Distance</span>
+                                <p>{{data.distance}}</p>
+                            </div>
+                            <div class="col">
+                                <span>Temps</span>
+                                <p class="ion-android-motor"><img src="img/motor.png" width="17" />{{data.time}} </p>
+                                <p class="ion-android-car">{{data.time2}}</p>
+                            </div>
+                        </div>
+                        <!--row-->
+                    </div>
+                    <a  ng-click="showRecherche()" class="btn-go">
+                        <img src="img/btn-go.png">
+                            </a>
+                </div>
+            </div>
+            
+            
+       </div>
+        
+        
+        
+        
+        
   </ion-content>
 </ion-view>
 

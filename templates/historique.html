@@ -4,30 +4,13 @@
 	<div class="recherche">
 	    <div class="list">
 
-		    <a class="item item-avatar" href="#/app/reserver">
-		      <img src="img/image.png">
-		      <h2>Alex</h2>
-		      <p><em>25 septembre 2016</em></p>
-		      <h3 class="price">35€</h3>
+		    <a class="item item-avatar" href="#/app/reserver" ng-repeat="dt in data">
+		      <img src="http://must.sifo-consulting.com/MustProject/web/users_pictures/{{dt.rider_photo}}">
+		      <h2>{{dt.rider_name}}</h2>
+		      <p><em>{{dt.startTime}}</em></p>
+		      <h3 class="price">{{dt.montant}}€</h3>
 		    </a>
-		    <a class="item item-avatar" href="#/app/reserver">
-		      <img src="img/image.png">
-		      <h2>Alex</h2>
-		      <p><em>25 septembre 2016</em></p>
-		      <h3 class="price">35€</h3>
-		    </a>
-		    <a class="item item-avatar" href="#/app/reserver">
-		      <img src="img/image.png">
-		      <h2>Alex</h2>
-		      <p><em>25 septembre 2016</em></p>
-		      <h3 class="price">35€</h3>
-		    </a>
-		    <a class="item item-avatar" href="#/app/reserver">
-		      <img src="img/image.png">
-		      <h2>Alex</h2>
-		      <p><em>25 septembre 2016</em></p>
-		      <h3 class="price">35€</h3>
-		    </a>
+
 
 		</div>
 	</div>
